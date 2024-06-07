@@ -1,0 +1,5 @@
+# Diretório de dependências do Composer
+/vendor/
+
+# Arquivos de configuração locais
+.env
