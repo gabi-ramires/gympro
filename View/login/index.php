@@ -12,31 +12,37 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 </head>
 <body>
-    <div id='app' class="container">
-        <h1 class="title">GymPro</h1>
-        <div class="login-box">
-            <h2>Login</h2>
-            <form>
-                <div class="input-box">
-                    <input type="text" v-model="username" required>
-                    <label>Usuário</label>
-                </div>
-                <div class="input-box">
-                    <input type="password" v-model="password" required>
-                    <label>Senha</label>
-                </div>
-                <button type='button' @click="login">Acessar</button>
-                <div class="register-text">
-                    <p>Não possui conta?</p>
-                    <a href="../registro/">Registrar-se</a>
-                </div>
+    <div>
+        <a class='link' href='../'><i class="bi bi-arrow-left"></i> Voltar</a>
+        <div id='app' class="container">
+            <h1 class="title">GymPro</h1>
+            <div class="login-box">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-box">
+                        <input type="text" v-model="username" required>
+                        <label>Usuário</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" v-model="password" required>
+                        <label>Senha</label>
+                    </div>
+                    <button type='button' @click="login">Acessar</button>
+                    <div class="register-text">
+                        <p>Não possui conta?</p>
+                        <a class='link' href="../registro/">Registrar-se</a>
+                    </div>
 
-            </form>
-        </div>
+                </form>
+            </div>
+        </div>        
     </div>
+
 
     <script>
 new Vue({

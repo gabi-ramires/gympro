@@ -34,6 +34,12 @@ class LoginController {
         echo json_encode($response);
     }
 
+    /**
+     * Verifica se a senha informada no login está correta
+     * @param $data['username']
+     * @param $data['password']
+     * @return array
+     */
     private function login($data) {
         $response = [];
 
@@ -48,12 +54,11 @@ class LoginController {
  
             $username = trim($data['username']);
             $password = trim($data['password']);
+            $password = password_hash($password, PASSWORD_DEFAULT);
 
             // Faz login
             $loginModel = new Login();
-
-            // Chamando um método do modelo
-            $loginModel->testMethod();
+            $loginModel->login($username, $password);
             if (false) {
                 $response = [
                     'status' => true,

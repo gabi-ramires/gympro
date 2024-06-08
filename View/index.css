@@ -1,0 +1,253 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "PTsans"; /* Nome que você deseja dar à sua fonte */
+  src: url("../fonts/PTSans-Regular.ttf") format("truetype");
+}
+body {
+  font-family: "PTsans", sans-serif;
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-image: url("../img/bg-login.jpg");
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: #EF780D;
+}
+
+h2 {
+  color: #EF780D;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #EF780D;
+  border: 1px solid #EF780D;
+  color: rgb(253, 253, 253);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  margin-top: 30px;
+  background-color: rgba(21, 20, 20, 0.522);
+  color: white;
+  font-size: large;
+  padding: 10px 20px 10px 20px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 12px;
+}
+
+::-moz-placeholder {
+  color: #f1eded; /* Cor do placeholder */
+}
+
+::placeholder {
+  color: #f1eded; /* Cor do placeholder */
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-with-icon {
+  padding-left: 40px; /* Espaçamento para o ícone */
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px; /* Posição do ícone */
+  top: 58%; /* Alinhamento vertical */
+}
+
+/************************ HEADER ************************/
+header {
+  height: 7vh;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  display: flex;
+  margin: 0;
+  color: #EF780D;
+}
+
+.logo {
+  position: absolute;
+  left: 40px;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  padding-right: 10px;
+  align-items: center;
+}
+
+/* Estilos para o menu */
+nav {
+  display: flex;
+  position: absolute;
+  right: 200px;
+  justify-content: end;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+}
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+  align-items: center;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+nav ul li a:hover {
+  color: #EF780D;
+}
+
+.btnLaranja  {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e97508;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.btnLaranja:hover {
+  background-color: #c96005;
+  color: #fff;
+}
+
+/************************ MAIN ************************/
+.container {
+  display: flex;
+  height: 89vh;
+}
+.container .row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.container .col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/************************* INDEX-SITE *********************/
+
+.index-site {
+  display: grid !important;
+  flex-direction: column;
+  justify-content: center;
+}
+.index-site .slogan {
+  display: flex;
+  flex-direction: column;
+  color: rgba(220, 119, 19, 0.8274509804);
+  height: -moz-max-content;
+  height: max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: larger;
+  border-radius: 8px;
+  padding: 20px;
+  justify-self: center;
+  align-self: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.index-site .slogan span {
+  color: #f7800a;
+}
+.index-site .produtos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px; /* Espaço entre os cards */
+  padding: 20px;
+}
+.index-site .card {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 230px;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: rgba(51, 51, 51, 0.8274509804);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.index-site .card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.index-site .card p {
+  font-size: 15px;
+  margin-top: 6px;
+  color: white;
+  text-align: start;
+}
+.index-site .preco {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+}
+.index-site .preco span {
+  font-size: larger;
+  text-align: center;
+}
+.index-site .contratar {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.index-site .contratar span {
+  text-align: center;
+}
+.index-site button {
+  margin: 0 !important;
+}
+.index-site span:hover {
+  color: white;
+}
+
+/************************ FOOTER ************************/
+/* Estilos para o rodapé */
+footer {
+  height: 3vh;
+  display: flex;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+

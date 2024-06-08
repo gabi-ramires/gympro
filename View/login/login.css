@@ -7,10 +7,21 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background: linear-gradient(135deg, #333, #444);
+}
+
+.link{
+    color: #e97508;
+    text-decoration: none;
+}
+
+.link:hover{
+    transition: 0.3s;
+    color: #c98d56;
 }
 
 .container {
@@ -100,12 +111,4 @@ button:hover {
     margin-top: 20px;
 }
 
-.register-text a {
-    color: #e97508;
-    text-decoration: none;
-    transition: 0.3s;
-}
 
-.register-text a:hover {
-    color: #c98d56;
-}
