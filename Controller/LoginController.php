@@ -31,7 +31,7 @@ class LoginController {
             ];
         }
 
-        echo json_encode($response);
+        //echo json_encode($response);
     }
 
     /**
@@ -43,7 +43,7 @@ class LoginController {
     private function login($data) {
         $response = [];
 
-        try {
+       
             // Verificações de segurança
             if (!isset($data['username']) || !isset($data['password'])) {
                 throw new Exception('Usuário e senha são obrigatórios');
@@ -54,31 +54,40 @@ class LoginController {
  
             $username = trim($data['username']);
             $password = trim($data['password']);
-            $password = password_hash($password, PASSWORD_DEFAULT);
 
             // Faz login
             $loginModel = new Login();
-            $loginModel->login($username, $password);
-            if (false) {
+            $result = $loginModel->login($username, $password);
+
+            if ($result) {
+                $this->iniciarSessao($username);
                 $response = [
                     'status' => true,
                     'msg' => 'Login bem-sucedido'
                 ];
             } else {
-                throw new Exception('Credenciais inválidas');
+                $response = [
+                    'status' => false,
+                    'msg' => 'Usuário e/ou senha incorretos.'
+                ];
             }
-        } catch (Exception $e) {
-            $response = [
-                'status' => false,
-                'msg' => $e->getMessage()
-            ];
-        }
+
 
         echo json_encode($response);
+    }
+
+    private function iniciarSessao($username) {
+        $loginModel = new Login();
+        $dadosPersonal = $loginModel->getInfosPersonal($username);
+        session_start();
+        $_SESSION['idPersonal'] = $dadosPersonal['id'];
+        $_SESSION['username'] = $dadosPersonal['usuario'];
     }
 }
 
 // Crie uma instância do controlador e manuseie a requisição
 $controller = new LoginController();
 $controller->handleRequest();
+
+
 ?>

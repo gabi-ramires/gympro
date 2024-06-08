@@ -111,4 +111,12 @@ button:hover {
     margin-top: 20px;
 }
 
+.fade {
+    opacity: 0;
+    transition: opacity 4.5s ease-in-out !important;
+}
+
+.fade.show {
+    opacity: 1;
+}
 

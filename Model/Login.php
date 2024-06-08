@@ -13,17 +13,22 @@ class Login {
     }
 
     /**
-     * Verifica se a senha informada no login está correta
+     * Verifica se usuario e senha informadas no login estão corretos
+     * @param string $username
+     * @param string $password
+     * @return bool true, false
      */
     public function login($username, $password) {
-        $sql = "SELECT `senha` FROM `personais` WHERE `usuario` LIKE 'karinetavares'";
+        $sql = "SELECT `senha` FROM `personais` WHERE `usuario` LIKE '{$username}'";
         $res = $this->dataBase->getRow($sql);
 
-        if(password_verify($pass, $hash)) {
-            echo 'Senha correta!';
-        } else {
-            echo "Senha incorreta!";
-        }
+        return password_verify($password, $res['senha']);
+    }
+
+    public function getInfosPersonal($username) {
+        $sql = "SELECT * FROM `personais` WHERE `usuario` LIKE '{$username}'";
+        $res = $this->dataBase->getRow($sql);
+
         return $res;
     }
 }

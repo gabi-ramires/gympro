@@ -181,6 +181,11 @@ nav ul li a:hover {
 .index-site .slogan span {
   color: #f7800a;
 }
+
+.index-site .slogan span:hover {
+  cursor:default;
+}
+
 .index-site .produtos {
   display: flex;
   flex-direction: row;
